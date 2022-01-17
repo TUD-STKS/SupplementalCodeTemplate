@@ -62,15 +62,17 @@ The easiest way to reproduce the results is to use a service like
 nowadays highly recommended, because this does not even require a local installation 
 and Jupyter Notebooks are very intuitive to use.
 
-Do not forget to add a badge from Binder as below. You can
+Do not forget to add a badge from Binder as below. Therefore, you can simply paste the
+link to your Github repository [here](https://mybinder.org/) and Binder will do the 
+rest for you.
 
-TODO: Add a badge
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/renierts/TemplateRepositoryPython/blob/master/Example-Notebook.ipynb/HEAD)
 
 To run the scripts or to start the Jupyter Notebook locally, t first, please ensure 
 that you have a valid Python distribution installed on your system. Here, at least 
 Python 3.8 is required.
 
-You can then 
+You can then call `run_jupyter-lab.bat` or `run_jupyter-lab.sh`.
 
 Then, the easiest way to reproduce the results is to either download and extract this 
 Github repository in the desired directory, open a Linux Shell and call `run.sh` or open 
