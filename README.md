@@ -66,7 +66,7 @@ Do not forget to add a badge from Binder as below. Therefore, you can simply pas
 link to your Github repository [here](https://mybinder.org/) and Binder will do the 
 rest for you.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/renierts/TemplateRepositoryPython/blob/master/Example-Notebook.ipynb/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/renierts/TemplateRepositoryPython/HEAD?labpath=Example-Notebook.ipynb)
 
 To run the scripts or to start the Jupyter Notebook locally, t first, please ensure 
 that you have a valid Python distribution installed on your system. Here, at least 
