@@ -4,7 +4,7 @@
 - Conference: Forschungsseminar "Sprache und Kognition", 
 Institute for Acoustics and Speech Communication, Technische Universität Dresden, 
 Dresden, Germany
-- Weblink: [https://github.com/TUD-STKS/...](https://github.com/TUD-STKS/...)
+- Weblink: [https://github.com/renierts/TemplateRepositoryPython](https://github.com/renierts/TemplateRepositoryPython)
 
 ## Abstract
 This is a template repository for Python code accompanying a research paper
