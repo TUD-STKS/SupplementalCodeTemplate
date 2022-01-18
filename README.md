@@ -87,25 +87,43 @@ You can then call `run_jupyter-lab.ps1` or `run_jupyter-lab.sh`.
 The individual steps to reproduce the results should be in the same order as in the 
 paper. Great would be self-explanatory names for each step.
 
-TODO: Show the individual steps to reproduce the results (e.g. data preprocessing, 
-model setup, training, test)
-```python
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import RandomizedSearchCV
-from sklearn.utils.fixes import loguniform
-from scipy.stats import uniform
-from file_handling import (load_data)
-from preprocessing import select_features
+At first, we import required Python modules and load the dataset, which is already 
+stored in `data`. 
 
-from pyrcn.extreme_learning_machine import ELMRegressor
+```python
+from file_handling import (load_data)
 
 
 training_data = load_data("../data/train.csv")
+```
+
+Since the data is stored as a Pandas dataframe, we can theoretically multiple features. 
+Here, we restrict the data features to the living area. With the function 
+`select_features`, we obtain numpy arrays and the feature transformer that can also be
+used for transforming the test data later. Next, we normalize them to zero mean and 
+unitary variance.
+
+```python
+from sklearn.preprocessing import StandardScaler
+from preprocessing import select_features
+
+
 X, y, feature_trf = select_features(
     df=training_data, input_features=["GrLivArea"], target="SalePrice")
 scaler = StandardScaler().fit(X)
 X_train = scaler.transform(X)
 y_train = y
+```
+
+We optimize a model using a random search.
+
+```python
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.utils.fixes import loguniform
+from scipy.stats import uniform
+
+from pyrcn.extreme_learning_machine import ELMRegressor
+
 
 model = RandomizedSearchCV(
     estimator=ELMRegressor(input_activation="relu", random_state=42,
@@ -114,10 +132,22 @@ model = RandomizedSearchCV(
                          "bias_scaling": uniform(loc=0, scale=2),
                          "alpha": loguniform(1e-5, 1e1)},
     random_state=42, n_iter=200, refit=True).fit(X, y)
+```
+
+We load and transform test data.
+
+```python
+from file_handling import load_data
+
 
 test_data = load_data("../data/test.csv")
 X = feature_trf.transform(test_data)
 X_test = scaler.transform(X)
+```
+
+Finally, we predict the test data.
+
+```python
 y_pred = model.predict(X_test)
 ```
 
