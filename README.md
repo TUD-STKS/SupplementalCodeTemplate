@@ -1,4 +1,4 @@
-# Template Repository for Research Papers with Python Code
+# Template Repository for Research Papers
 ## Metadata
 - Author: [Peter Steiner](mailto:peter.steiner@tu-dresden.de)
 - Conference: Forschungsseminar "Sprache und Kognition", 
@@ -7,8 +7,8 @@ Dresden, Germany
 - Weblink: [https://github.com/renierts/TemplateRepositoryPython](https://github.com/renierts/TemplateRepositoryPython)
 
 ## Summary and Contents
-This is a template repository for Python code accompanying a research paper
-and should allow to reproduce the results from the paper.
+This is a template repository for code accompanying a research paper and should allow 
+to reproduce the results from the paper.
 
 This template provides everything to getting started. and it can directly be used
 for basically any research paper.
@@ -54,17 +54,20 @@ Digital Object Identifier(DOI)etc.
     - `src/file_handling.py`: Utility functions for storing and loading data and models.
     - `src/preprocessing.py`: Utility functions for preprocessing the dataset
     - `src/main.py`: The main script to reproduce all results.
-- `requirements.txt`: Text file containing all required Python modules to be 
-    installed
- -> pip freeze
+- `requirements.txt`: Text file containing all required Python modules to be installed
+if we are working in Python. It can be obtained by typing 
+`pip freeze > requirements.txt` in a PowerShell or Bash. 
 - `README.md`: The README displayed here.
 - `LICENSE`: Textfile containing the license for this source code. You can find 
 - `data/`: The optional directory `data` contains
     - `train.csv`: Training data as CSV file
     - `test.csv`: Test data as CSV file
 - `results/`
-    - (Pre)-trained model as joblib file
+    - (Pre)-trained modelss.
     - Results as CSV file.
+- `.gitignore`: Command file for Github to ignore files with specific extensions. This
+is useful to keep the repository clean. Templates for many programming languages are 
+available [here](https://github.com/github/gitignore).
 
 ## Usage
 The easiest way to reproduce the results is to use a service like 
