@@ -56,7 +56,7 @@ Digital Object Identifier(DOI)etc.
     - `src/main.py`: The main script to reproduce all results.
 - `requirements.txt`: Text file containing all required Python modules to be installed
 if we are working in Python. It can be obtained by typing 
-`pip freeze > requirements.txt` in a PowerShell or Bash. 
+`pip freeze > requirements.txt` in a PowerShell or in a Bash. 
 - `README.md`: The README displayed here.
 - `LICENSE`: Textfile containing the license for this source code. You can find 
 - `data/`: The optional directory `data` contains
