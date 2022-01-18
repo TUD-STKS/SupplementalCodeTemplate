@@ -76,7 +76,7 @@ Do not forget to add a badge from Binder as below. Therefore, you can simply pas
 link to your Github repository [here](https://mybinder.org/) and Binder will do the 
 rest for you.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/renierts/TemplateRepositoryPython/HEAD?labpath=Example-Notebook.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/renierts/TemplateRepositoryPython/HEAD?labpath=src%2FExample-Notebook.ipynb)
 
 To run the scripts or to start the Jupyter Notebook locally, t first, please ensure 
 that you have a valid Python distribution installed on your system. Here, at least 
@@ -89,6 +89,37 @@ paper. Great would be self-explanatory names for each step.
 
 TODO: Show the individual steps to reproduce the results (e.g. data preprocessing, 
 model setup, training, test)
+```python
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.utils.fixes import loguniform
+from scipy.stats import uniform
+from file_handling import (load_data)
+from preprocessing import select_features
+
+from pyrcn.extreme_learning_machine import ELMRegressor
+
+
+training_data = load_data("../data/train.csv")
+X, y, feature_trf = select_features(
+    df=training_data, input_features=["GrLivArea"], target="SalePrice")
+scaler = StandardScaler().fit(X)
+X_train = scaler.transform(X)
+y_train = y
+
+model = RandomizedSearchCV(
+    estimator=ELMRegressor(input_activation="relu", random_state=42,
+                           hidden_layer_size=50),
+    param_distributions={"input_scaling": uniform(loc=0, scale=2),
+                         "bias_scaling": uniform(loc=0, scale=2),
+                         "alpha": loguniform(1e-5, 1e1)},
+    random_state=42, n_iter=200, refit=True).fit(X, y)
+
+test_data = load_data("../data/test.csv")
+X = feature_trf.transform(test_data)
+X_test = scaler.transform(X)
+y_pred = model.predict(X_test)
+```
 
 The aforementioned steps are summarized in the script `main.py`. The easiest way to 
 reproduce the results is to either download and extract this 
