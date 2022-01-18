@@ -6,7 +6,7 @@ Institute for Acoustics and Speech Communication, Technische Universität Dresde
 Dresden, Germany
 - Weblink: [https://github.com/renierts/TemplateRepositoryPython](https://github.com/renierts/TemplateRepositoryPython)
 
-## Abstract
+## Summary and Contents
 This is a template repository for Python code accompanying a research paper
 and should allow to reproduce the results from the paper.
 
@@ -18,9 +18,10 @@ We propose to use the following structure of this README:
 - Metadata:
     - Metadata contains the author names, journal/conference, weblinks, such as the 
 Digital Object Identifier(DOI)etc.
-- Abstract:
-    - The abstract is either the abstract of the paper or summarize the paper in another
-    way.
+- Summary and Contents:
+    - The summary is typically not the abstract of the paper but a summary of what the
+     repo containts.
+     - Take care of the Copyright of the publisher
 - File list:
     - The file list contains all files provided in the repository together with a 
     short description.
@@ -37,10 +38,12 @@ Digital Object Identifier(DOI)etc.
     - other acknowledgments, such as project partners, contributors, family etc.
 - License:
     - Reference to the license of your code - how can readers re-use it?
+    - Which defaults?
 - Referencing:
     - How can your work be cited? Ideally, provide a bibtex entry of the paper.
 
 ## File list
+-> New Structure: python files in src, scripts in "scripts"
 The following files are provided in this repository
 - `run.sh`: UNIX Bash script to reproduce the Figures in the paper.
 - `run_jupyter-lab.sh`: UNIX Bash script to start the Jupyter Notebook for the paper.
@@ -49,12 +52,15 @@ The following files are provided in this repository
 paper.
 - `utils.py`: Utility functions for visualization, storing and loading data etc.
 - `requirements.txt`: Text file containing all required Python modules to be installed
+ -> pip freeze
 - `README.md`: The README displayed here.
 - `LICENSE`: Textfile containing the license for this source code. You can find 
 - `data/`: The optional directory `data` contains
     - `train.csv`: Training data as CSV file
     - `test.csv`: Test data as CSV file
+- `results/`
     - After the run: pre-trained model and results as CSV file (if desired).
+    - TODO: What to do here?
 
 ## Usage
 The easiest way to reproduce the results is to use a service like 
@@ -72,11 +78,14 @@ To run the scripts or to start the Jupyter Notebook locally, t first, please ens
 that you have a valid Python distribution installed on your system. Here, at least 
 Python 3.8 is required.
 
-You can then call `run_jupyter-lab.bat` or `run_jupyter-lab.sh`.
+You can then call `run_jupyter-lab.ps1` or `run_jupyter-lab.sh`.
+
+TODO: Show the individual steps to reproduce the results (e.g. data preprocessing, 
+model setup, training, test)
 
 Then, the easiest way to reproduce the results is to either download and extract this 
 Github repository in the desired directory, open a Linux Shell and call `run.sh` or open 
-a Windows powershell and call `run.bat`. 
+a Windows powershell and call `run.ps1`. 
 
 In that way, a [Python venv](https://docs.python.org/3/library/venv.html) is created, 
 where all required packages (specified by `requirements.txt`) are installed. 
