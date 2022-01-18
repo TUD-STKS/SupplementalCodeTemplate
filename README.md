@@ -4,7 +4,7 @@
 - Conference: Forschungsseminar "Sprache und Kognition", 
 Institute for Acoustics and Speech Communication, Technische Universität Dresden, 
 Dresden, Germany
-- Weblink: [https://github.com/renierts/TemplateRepositoryPython](https://github.com/renierts/TemplateRepositoryPython)
+- Weblink: [https://github.com/renierts/TemplateRepository](https://github.com/renierts/TemplateRepository)
 
 ## Summary and Contents
 This is a template repository for code accompanying a research paper and should allow 
@@ -79,13 +79,21 @@ Do not forget to add a badge from Binder as below. Therefore, you can simply pas
 link to your Github repository [here](https://mybinder.org/) and Binder will do the 
 rest for you.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/renierts/TemplateRepositoryPython/HEAD?labpath=src%2FExample-Notebook.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/renierts/TemplateRepository/HEAD?labpath=src%2FExample-Notebook.ipynb)
 
-To run the scripts or to start the Jupyter Notebook locally, t first, please ensure 
+To run the scripts or to start the Jupyter Notebook locally, at first, please ensure 
 that you have a valid Python distribution installed on your system. Here, at least 
 Python 3.8 is required.
 
-You can then call `run_jupyter-lab.ps1` or `run_jupyter-lab.sh`.
+You can then call `run_jupyter-lab.ps1` or `run_jupyter-lab.sh`. This will install a new 
+[Python venv](https://docs.python.org/3/library/venv.html), which is our recommended way 
+of getting started.
+
+To manually reproduce the results, you should create a new Python venv as well.
+Therefore, you can run the script `create_venv.sh` on a UNIX bash or `create_venv.ps1`
+that will automatically install all packages from PyPI. Afterwards, just type 
+`source .virtualenv/bin/activate` in a UNIX bash or `.virtualenv/Scripts/activate.ps1`
+in a PowerShell.
 
 The individual steps to reproduce the results should be in the same order as in the 
 paper. Great would be self-explanatory names for each step.
@@ -154,29 +162,25 @@ Finally, we predict the test data.
 y_pred = model.predict(X_test)
 ```
 
-The aforementioned steps are summarized in the script `main.py`. The easiest way to 
-reproduce the results is to either download and extract this 
-Github repository in the desired directory, open a Linux Shell and call `run.sh` or open 
-a Windows powershell and call `run.ps1`. 
+After you finished your experiments, please do not forget to deactivate the venv by 
+typing `deactivate` in your command prompt.
 
-In that way, a [Python venv](https://docs.python.org/3/library/venv.html) is created, 
-where all required packages (specified by `requirements.txt`) are installed. 
-Afterwards, the script `main.py` is excecuted with all default arguments activated in 
+The aforementioned steps are summarized in the script `main.py`. The easiest way to
+reproduce the results is to either download and extract this Github repository in the
+desired directory, open a Linux Shell and call `run.sh` or open a Windows PowerShell and
+call `run.ps1`. 
+
+In that way, again, a [Python venv](https://docs.python.org/3/library/venv.html) is 
+created, where all required packages (specified by `requirements.txt`) are installed.
+Afterwards, the script `main.py` is excecuted with all default arguments activated in
 order to reproduce all results in the paper.
 
-You can adjust the level of verbosity by adding or removing the character `v` in the 
-string `-vvv` to make the script more or less verbose.
-
-If you want to suppress the plots, you can simply remove the `--plot` argument.
-
-If you do not want to store the result or the pre-trained model, you can remove the 
-arguments `--export` or `--serialize`, respectively.
-
+If you want to suppress any options, simply remove the particular option.
 
 ## Acknowledgements
 This research was supported by
-```diff
-! Add funding information
+```
+Nobody
 ```
 
 
@@ -186,6 +190,12 @@ code for research that results in publications, please cite our original
 article listed above.
 
 You can use the following BibTeX entry
-```diff
-! Add bibtex entry of the published paper
+```
+@inproceedings{src:Steiner-22,
+  author    = "Peter Steiner",
+  title     = "Template Repository for Research Papers",
+  booktitle = "Proceedings of the Research Seminar",
+  year      = 2022,
+  pages     = "1--6",
+}
 ```

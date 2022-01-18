@@ -53,7 +53,10 @@ def main(plot=False, export=False, serialize=False):
 
     if plot:
         fig, axs = plt.subplots()
-        sns.pairplot(data=training_data)
+        sns.pairplot(data=training_data, vars=["LotArea", "OverallQual",
+                                               "OverallCond", "YearBuilt",
+                                               "YearRemodAdd", "GrLivArea",
+                                               "SalePrice"])
         plt.title("Training data")
         plt.tight_layout()
 
@@ -88,7 +91,7 @@ def main(plot=False, export=False, serialize=False):
 
     if plot:
         y_pred = model.predict(X)
-        sns.scatterplot(x=X, y=y_pred, ax=axs)
+        sns.scatterplot(x=X.ravel(), y=y_pred.ravel(), ax=axs)
 
     LOGGER.info("Loading the test dataset...")
     test_data = load_data("./data/test.csv")
@@ -105,13 +108,14 @@ def main(plot=False, export=False, serialize=False):
     LOGGER.info("... done!")
     if plot:
         fig, axs = plt.subplots()
-        sns.scatterplot(x=X, y=y_pred, ax=axs)
+        sns.scatterplot(x=X.ravel(), y=y_pred.ravel(), ax=axs)
         plt.ylabel("Predicted SalePrice")
         plt.title("Test data")
         plt.tight_layout()
 
     results = {
-        "GrLivArea": test_data["GrLivArea"], "PredictedSalePrice": y_pred}
+        "GrLivArea": test_data["GrLivArea"], "PredictedSalePrice":
+            y_pred.ravel()}
 
     if export:
         LOGGER.info("Storing results...")
@@ -129,16 +133,12 @@ if __name__ == "__main__":
     parser.add_argument("--plot", action="store_true")
     parser.add_argument("--export", action="store_true")
     parser.add_argument("--serialize", action="store_true")
-    parser.add_argument("-v", "--verbosity", action="count", default=0,
-                        help="Increase output verbosity")
     args = vars(parser.parse_args())
-    verb = args.pop("verbosity")
     logging.basicConfig(format="%(asctime)s - [%(levelname)8s]: %(message)s",
                         handlers=[
                             logging.FileHandler("main.log", encoding="utf-8"),
                             logging.StreamHandler()
                         ])
-    loglevel = logging.WARNING - verb*10
-    LOGGER.setLevel(loglevel)
+    LOGGER.setLevel(logging.DEBUG)
     main(**args)
     exit(0)

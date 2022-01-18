@@ -7,6 +7,4 @@ python.exe -m venv .virtualenv
 
 .\.virtualenv\Scripts\activate.ps1
 python.exe -m pip install -r requirements.txt
-python.exe .\src\main.py --plot --export --serialize
-
 deactivate
