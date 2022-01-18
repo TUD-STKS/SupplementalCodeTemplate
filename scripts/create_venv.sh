@@ -3,7 +3,7 @@
 # "Template Repository for Research Papers with Python Code"
 #
 # Copyright (C) 2022 Peter Steiner
-# License: GPLv3
+# License: BSD 3-Clause
 
 python3 -m venv .virtualenv
 source .virtualenv/bin/activate

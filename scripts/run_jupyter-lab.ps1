@@ -1,7 +1,7 @@
 # "Template Repository for Research Papers with Python Code"
 #
 #  Copyright (C) 2021 Peter Steiner
-# License: GPLv3
+# License: BSD 3-Clause
 
 python.exe -m venv .virtualenv
 

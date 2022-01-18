@@ -3,7 +3,7 @@ Preprocessing utilities required to reproduce the results in the paper
 'Template Repository for Research Papers with Python Code'.
 """
 # Authors: Peter Steiner <peter.steiner@tu-dresden.de>,
-# License: BSD 3 clause
+# License: BSD 3-Clause
 
 from typing import List, Tuple
 from pandas import DataFrame

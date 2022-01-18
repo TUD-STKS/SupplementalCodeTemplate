@@ -4,7 +4,7 @@ Main Code to reproduce the results in the paper
 """
 
 # Authors: Peter Steiner <peter.steiner@tu-dresden.de>,
-# License: BSD 3 clause
+# License: BSD 3-Clause
 
 import logging
 

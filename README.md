@@ -79,7 +79,7 @@ Do not forget to add a badge from Binder as below. Therefore, you can simply pas
 link to your Github repository [here](https://mybinder.org/) and Binder will do the 
 rest for you.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/renierts/TemplateRepository/HEAD?labpath=src%2FExample-Notebook.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/TUD-STKS/SupplementalCodeTemplate/HEAD?labpath=src%2FExample-Notebook.ipynb)
 
 To run the scripts or to start the Jupyter Notebook locally, at first, please ensure 
 that you have a valid Python distribution installed on your system. Here, at least 
@@ -185,9 +185,12 @@ Nobody
 
 
 ## License and Referencing
-This program is licensed under the GPLv3 license. If you in any way use this
+This program is licensed under the BSD 3-Clause License. If you in any way use this
 code for research that results in publications, please cite our original
 article listed above.
+
+More information about licensing can be found [here](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
+and [here](https://en.wikipedia.org/wiki/License).
 
 You can use the following BibTeX entry
 ```
