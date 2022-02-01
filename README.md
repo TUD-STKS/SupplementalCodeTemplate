@@ -5,7 +5,7 @@
 Institute for Acoustics and Speech Communication, Technische Universität Dresden, 
 Dresden, Germany
 - Weblink:
-https://github.com/TUD-STKS/TemplateRepository](https://github.com/TUD-STKS/TemplateRepository)
+[https://github.com/TUD-STKS/TemplateRepository](https://github.com/TUD-STKS/TemplateRepository)
 
 ## Summary and Contents
 This is a template repository for code accompanying a research paper and should allow 
