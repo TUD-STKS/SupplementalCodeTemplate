@@ -203,3 +203,5 @@ You can use the following BibTeX entry
   pages     = "1--6",
 }
 ```
+## Appendix
+For any questions, do not hesitate to open an issue or to drop a line to [Peter Steiner](mailto:peter.steiner@tu-dresden.de)
